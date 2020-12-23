@@ -10,7 +10,6 @@ const name = prompt("Username?");
 /** called when connection opens, sends join info to server. */
 
 ws.onopen = function(evt) {
-  console.log("open", evt);
 
   let data = {type: "join", name: name};
   ws.send(JSON.stringify(data));
@@ -20,9 +19,7 @@ ws.onopen = function(evt) {
 /** called when msg received from server; displays it. */
 
 ws.onmessage = async function(evt) {
-  // console.log("message", evt);
   let msg = JSON.parse(evt.data);
-  // console.log(msg)
   let item;
 
   if (msg.type === "note") {

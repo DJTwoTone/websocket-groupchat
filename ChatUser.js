@@ -81,14 +81,6 @@ class ChatUser {
   }
 }
 
-async function getJoke() {
-  let joke = await axios.get({
-      url: 'https://icanhazdadjoke.com/',
-      headers: { 
-        'Accept': 'text/plain'
-      }
-  });
-  return joke;
-}
+
 
 module.exports = ChatUser;
